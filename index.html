@@ -598,4 +598,39 @@
         
         setTimeout(() => { 
             cover.style.display = 'none'; 
-            videoKolase.play().catch(e => console.log
+            videoKolase.play().catch(e => console.log("Auto-play video terblokir browser"));
+        }, 1000);
+    }
+
+    // 4. PENYADURAN NAMA TAMU OTOMATIS (?to=Nama+Tamu)
+    const URLQuery = new URLSearchParams(window.location.search);
+    const dapatNama = URLQuery.get('to');
+    if(dapatNama) {
+        document.getElementById('tamu-nama-cover').innerText = dapatNama;
+    }
+
+    // 5. HITUNG MUNDUR STATIS (Target: 6 Juni 2026)
+    let targetWaktu = new Date("June 6, 2026 08:00:00").getTime();
+    const hitungMundur = setInterval(function() {
+        const waktuSekarang = new Date().getTime();
+        const selisih = targetWaktu - waktuSekarang;
+
+        const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+        const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+        const detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+        document.getElementById("cd-days").innerText = hari < 10 ? "0" + hari : hari;
+        document.getElementById("cd-hours").innerText = jam < 10 ? "0" + jam : jam;
+        document.getElementById("cd-minutes").innerText = menit < 10 ? "0" + menit : menit;
+        document.getElementById("cd-seconds").innerText = detik < 10 ? "0" + detik : detik;
+
+        if (selisih < 0) {
+            clearInterval(hitungMundur);
+            document.querySelectorAll('.countdown-value').forEach(el => el.innerText = "00");
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
