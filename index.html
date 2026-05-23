@@ -3,750 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wisuda SD Athalia 2026 - Official Digital Invitation</title>
-    
-    <meta property="og:title" content="Undangan Resmi Wisuda SD Athalia 2026">
-    <meta property="og:description" content="Mengharap kehadiran Bapak/Ibu Orang Tua/Wali Murid dalam prosesi Pelepasan dan Wisuda Agung Angkatan 2026.">
-    <meta property="og:image" content="logoathalia.png">
-    <meta property="og:type" content="website">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <title>Graduation SD Athalia - Lorong Waktu</title>
     <style>
-        /* ========================================== */
-        /* 1. INITIAL SETUP & EARTH MOODBOARD         */
-        /* ========================================== */
-        :root {
-            --navy: #00457C;
-            --cerulean: #007BA7; 
-            --sage: #8DA082;
-            --earth-beige: #F5F2EA;
-            --clay: #B68D40; 
-            --white: #FFFFFF;
-            --slate: #475569;
-            --youtube-red: #D93025;
+        /* ==========================================================================
+           1. RESET & CONFIGURATION STYLE (Tema Warna Athalia Navy & Gold)
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            background-color: #2D2A26; 
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 0;
-            overflow-x: hidden;
+            background-color: #fcfbfa;
+            color: #333333;
+            line-height: 1.6;
         }
-        
-        body.lock-scroll { overflow: hidden; height: 100vh; }
 
-        .phone-wrapper {
-            background-color: var(--earth-beige);
+        .container {
             width: 100%;
-            max-width: 450px;
-            min-height: 100vh;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            border-radius: 24px;
-            position: relative;
-            overflow: hidden; 
+            max-width: 480px; /* Dioptimalkan untuk tampilan mobile-first yang rapi */
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        section { padding: 45px 24px; position: relative; background-color: var(--white); margin-bottom: 12px; }
-        section:last-of-type { margin-bottom: 0; }
-
-        h1, h2, h3 { font-family: 'Lora', serif; color: var(--navy); font-weight: 600; }
-        h2 { font-size: 24px; line-height: 1.3; }
-        p, li { color: var(--slate); font-size: 14.5px; line-height: 1.6; }
-
-        .motto-tag { color: var(--sage); font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; display: block; }
-
-        /* ========================================== */
-        /* 2. EFEK ANIMASI TEKS LIGHT RUNNING         */
-        /* ========================================== */
-        .shine-text {
-            background: linear-gradient(to right, var(--navy) 20%, var(--sage) 40%, var(--sage) 60%, var(--navy) 80%);
-            background-size: 200% auto;
-            color: var(--navy);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
-            display: inline-block;
+        /* ==========================================================================
+           2. HERO & HERO HEADER SECTION
+           ========================================================================== */
+        .hero-section {
+            background: linear-gradient(rgba(26, 64, 102, 0.85), rgba(26, 64, 102, 0.95)), url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
 
-        .shine-text-cover {
-            background: linear-gradient(to right, #38bdf8 0%, #a7f3d0 25%, #4ade80 50%, #a7f3d0 75%, #38bdf8 100%);
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 3s linear infinite; 
-            display: inline-block;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
-            filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3)); 
+        .hero-section h1 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
         }
 
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        /* ========================================== */
-        /* 3. COVER COMPONENT & VIDEO BACKGROUND      */
-        /* ========================================== */
-        .full-screen-cover {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 999;
-            display: flex; flex-direction: column; justify-content: space-between; align-items: center;
-            padding: 50px 24px 40px; text-align: center; color: white;
-            transition: opacity 1s ease, transform 1s ease;
-            background-color: #03111f; 
-            overflow: hidden;
-        }
-
-        .bg-video {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; 
-            z-index: 1; 
-            opacity: 0.35; 
-        }
-
-        .video-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.7)); 
-            z-index: 2; 
-        }
-
-        .cover-content { 
-            position: relative; 
-            z-index: 3; 
-            width: 100%; 
-        }
-
-        /* ========================================== */
-        /* 4. ANIMASI TOMBOL LINGKARAN (RIPPLE EFFECT)*/
-        /* ========================================== */
-        .gate-button-wrapper {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .btn-enter-gate {
-            position: relative;
-            width: 65px;
-            height: 65px;
-            background: linear-gradient(135deg, rgba(0, 69, 124, 0.9) 0%, rgba(0, 123, 167, 0.8) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            color: var(--white);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 69, 124, 0.4);
-        }
-        
-        .btn-enter-gate i {
-            font-size: 20px;
-            margin-left: 4px; 
-        }
-
-        .btn-enter-gate:active { transform: scale(0.95); }
-
-        .ripple-circle {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            border: 1px solid rgba(0, 123, 167, 0.7); 
-            animation: ripple-anim 2.5s infinite cubic-bezier(0.1, 0.6, 0.4, 1);
-            pointer-events: none;
-        }
-
-        .ripple-1 { animation-delay: 0s; }
-        .ripple-2 { animation-delay: 0.8s; }
-
-        @keyframes ripple-anim {
-            0% { width: 65px; height: 65px; opacity: 1; }
-            100% { width: 140px; height: 140px; opacity: 0; }
-        }
-
-        .gate-text {
-            margin-top: 25px;
-            font-size: 11px;
-            letter-spacing: 4px;
+        .hero-section p {
+            font-size: 14px;
+            color: #dcd7cc;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 500;
+            letter-spacing: 2px;
         }
 
-        /* ========================================== */
-        /* 5. ANIMASI TRANSISI ELEGAN                 */
-        /* ========================================== */
-        .animate-up { opacity: 0; transform: translateY(35px); transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        .animate-up.show { opacity: 1; transform: translateY(0); }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
+        /* ==========================================================================
+           3. KILAS BALIK / LORONG WAKTU SECTION
+           ========================================================================== */
+        .kilas-balik {
+            padding: 40px 0;
+        }
 
-        /* ========================================== */
-        /* STRUCTURE REPAIR: KILAS BALIK SLIDER CSS  */
-        /* ========================================== */
-        .slider-wrapper {
+        .section-header {
+            margin-bottom: 25px;
+        }
+
+        .kilas-balik .sub-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9a8c73;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .kilas-balik .main-title {
+            font-size: 26px;
+            color: #1a4066;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+            font-weight: normal;
+        }
+
+        .kilas-balik .desc-title {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        /* CARD TIMELINE BERUNTUN KE BAWAH */
+        .timeline-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px; /* Jarak antar kartu vertikal */
+        }
+
+        .timeline-card {
+            background: #fdfbf7;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 14px;
+            border: 1px solid #f0ede6;
+        }
+
+        /* SCREEN CAROUSEL FOTO */
+        .slider-container {
             position: relative;
             width: 100%;
+            height: 260px; /* Tinggi frame foto */
+            border-radius: 18px;
             overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            background: var(--earth-beige);
+            background-color: #eaeaea;
         }
-        .slides-container {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .slide-item {
-            min-width: 100%;
-            box-sizing: border-box;
-            background: var(--earth-beige);
-        }
-        .slide-img {
+
+        .slider-wrapper {
             width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 20px 20px 0 0;
-            display: block;
+            height: 100%;
+            position: relative;
         }
-        .slide-caption {
-            padding: 16px;
-            text-align: left;
-        }
-        .nav-btn {
+
+        .slider-wrapper .slide {
             position: absolute;
-            top: 90px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .slider-wrapper .slide.active {
+            opacity: 1;
+        }
+
+        /* NAVIGASI TOMBOL PANAH */
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.25);
-            border: none;
+            background: rgba(0, 0, 0, 0.3);
             color: white;
+            border: none;
             width: 36px;
             height: 36px;
             border-radius: 50%;
             cursor: pointer;
-            z-index: 10;
+            font-size: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            transition: background 0.3s, transform 0.2s;
+            z-index: 5;
+            transition: background 0.3s;
         }
-        .nav-btn:hover { background: rgba(0, 69, 124, 0.6); }
-        .nav-btn:active { transform: translateY(-50%) scale(0.9); }
-        .prev-btn { left: 10px; }
-        .next-btn { right: 10px; }
-        
-        .dot-container {
+
+        .prev-btn:hover, .next-btn:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .prev-btn { left: 12px; }
+        .next-btn { right: 12px; }
+
+        /* KONTEN TEKS (STATIS DI BAWAH FOTO) */
+        .text-content {
+            padding: 18px 6px 4px 6px;
+        }
+
+        .text-content h3 {
+            font-size: 18px;
+            color: #1a4066;
+            margin-bottom: 8px;
+            font-family: Georgia, serif;
+            font-weight: normal;
+        }
+
+        .text-content p {
+            font-size: 13.5px;
+            color: #444444;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* INDIKATOR TITIK (DOTS) */
+        .dots-container {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 6px;
+            margin-top: 12px;
+            margin-bottom: 4px;
         }
+
         .dot {
             width: 8px;
             height: 8px;
+            background-color: #e1dbcf;
             border-radius: 50%;
-            background: #cbd5e1;
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
         }
+
         .dot.active {
-            background: var(--navy);
-            width: 18px;
-            border-radius: 10px;
+            background-color: #1a4066;
+            transform: scale(1.1);
         }
 
-        /* ========================================== */
-        /* 6. COMPONENT PARTS (UI/UX ELEMENTS)        */
-        /* ========================================== */
-        .countdown-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 25px 0 10px; }
-        .countdown-card { background: var(--earth-beige); border: 1px solid rgba(141, 160, 130, 0.3); border-radius: 14px; padding: 12px 2px; text-align: center; box-shadow: 0 8px 16px rgba(0,0,0,0.03); }
-        .countdown-value { font-family: 'Lora', serif; font-size: 24px; font-weight: 700; color: var(--navy); display: block; }
-        .countdown-label { font-size: 10px; color: var(--sage); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-
-        .rundown-timeline { position: relative; margin-top: 25px; padding-left: 20px; }
-        .rundown-timeline::before { content: ''; position: absolute; left: 4px; top: 5px; bottom: 5px; width: 2px; background: linear-gradient(to bottom, var(--navy), var(--sage)); }
-        .rundown-timeline .rundown-item { position: relative; margin-bottom: 20px; padding-left: 15px; }
-        .rundown-dot { position: absolute; left: -21px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background-color: var(--earth-beige); border: 3px solid var(--sage); transition: transform 0.3s; }
-        .rundown-item.highlight .rundown-dot { border-color: var(--navy); transform: scale(1.15); }
-        .rundown-card-content { background: var(--earth-beige); padding: 14px 16px; border-radius: 12px; border-left: 4px solid var(--sage); }
-        .rundown-item.highlight .rundown-card-content { border-left-color: var(--navy); background: rgba(0, 69, 124, 0.05); }
-        .rundown-time { font-size: 12.5px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
-        .rundown-title { font-size: 14px; font-weight: 600; color: #1e293b; }
-
-        .btn-premium { background: linear-gradient(135deg, var(--navy) 0%, #002d52 100%); color: white; padding: 16px 24px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; font-size: 15px; width: 100%; box-shadow: 0 10px 20px rgba(0, 45, 82, 0.2); border: none; cursor: pointer; transition: all 0.3s ease; }
-        .btn-premium:active { transform: scale(0.98); }
-
-        .pulse-icon { animation: pulse-animation 1.8s infinite; }
-        @keyframes pulse-animation { 0% { transform: scale(0.95); opacity: 1; } 50% { transform: scale(1.15); opacity: 0.7; } 100% { transform: scale(0.95); opacity: 1; } }
-
-        .img-fluid { width: 100%; height: auto; border-radius: 16px; object-fit: cover; }
-
-        /* ========================================== */
-        /* 7. AUDIO BUTTON (POJOK KIRI ATAS PRESISI)  */
-        /* ========================================== */
-        .audio-container {
-            position: fixed;
-            top: 20px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            width: 100%;
-            max-width: 450px; 
-            z-index: 1000;
-            display: flex;
-            justify-content: flex-start; 
-            padding-left: 20px; 
-            pointer-events: none; 
+        /* ==========================================================================
+           4. FOOTER SECTION
+           ========================================================================== */
+        footer {
+            background-color: #1a4066;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
         }
 
-        .btn-audio { 
-            pointer-events: auto; 
-            background: rgba(0, 0, 0, 0.25); 
-            backdrop-filter: blur(6px); 
-            -webkit-backdrop-filter: blur(6px);
-            color: var(--white); 
-            width: 42px; 
-            height: 42px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            border: 1px solid rgba(255, 255, 255, 0.3); 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
-            cursor: pointer; 
-            transition: all 0.3s ease; 
+        footer p {
+            color: #dcd7cc;
         }
-        .btn-audio:active { transform: scale(0.9); }
     </style>
 </head>
-<body class="lock-scroll"> 
+<body>
 
-<audio id="bg-music" loop>
-    <source src="Short_1 Version.wav" type="audio/wav">
-</audio>
-
-<div class="audio-container">
-    <button class="btn-audio" id="btn-audio-toggle" onclick="toggleAudio()">
-        <i class="fa-solid fa-volume-xmark" id="audio-icon"></i>
-    </button>
-</div>
-
-<div class="phone-wrapper">
-
-    <div id="welcome-gate" class="full-screen-cover">
-        <video class="bg-video" playsinline autoplay muted loop>
-            <source src="R1_C2739.mp4" type="video/mp4">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-        
-        <div class="cover-content animate-up" style="margin-top: 15px;">
-            <img src="logoathalia.png" style="width: 85px; height: auto; display: block; margin: 0 auto 20px; filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.4));" alt="Logo Athalia">
-            
-            <p style="color: rgba(255,255,255,0.7); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">SD Athalia • Angkatan 2026</p>
-            
-            <h1 class="shine-text-cover" style="font-size: 42px; line-height: 1.1; margin-top: 5px;">
-                Rooted in God's Story,<br>
-                <span style="font-style: italic; font-weight: 400;">into the Next Chapter</span>
-            </h1>
-            
-            <p style="color: var(--earth-beige); font-size: 13px; letter-spacing: 2px; margin-top: 25px; text-transform: uppercase;">Wisuda & Pelepasan</p>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Selamat & Sukses</h1>
+            <p>Kelulusan SD Athalia Angkatan 2026</p>
         </div>
-        
-        <div class="cover-content animate-up delay-100" style="margin-top: 20px; background: rgba(0,0,0,0.3); padding: 15px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(4px);">
-            <p style="color: #cbd5e1; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px;">Kepada Yth:</p>
-            <h3 style="color: white; font-size: 16px; font-family: 'Plus Jakarta Sans', sans-serif;" id="tamu-nama-cover">Orang Tua / Wali Murid</h3>
-        </div>
+    </header>
 
-        <div class="cover-content animate-up delay-200 gate-button-wrapper">
-            <div class="ripple-circle ripple-1"></div>
-            <div class="ripple-circle ripple-2"></div>
-            <button onclick="bukaUndanganDigital()" class="btn-enter-gate">
-                <i class="fa-solid fa-play"></i>
-            </button>
-            <div class="gate-text">Ketuk Untuk Masuk</div>
-        </div>
-    </div>
-
-    <section style="text-align: center; border-radius: 24px 24px 0 0; padding-top: 55px; background-image: url('https://www.transparenttextures.com/patterns/watercolor-paper.png');">
-        <div class="animate-up">
-            <span class="motto-tag">MOMENTUM KELULUSAN</span>
-            <h2 class="shine-text">A Journey of Six Years</h2>
-            <p style="margin: 15px 0 20px; font-size: 14px; color: var(--slate); padding: 0 10px;">
-               Setiap langkah kami adalah bagian dari cerita besar Tuhan. Dari hari pertama dengan rasa gugup, hingga hari ini kami siap melangkah ke bab berikutnya. Kami bertumbuh, belajar, tertawa, dan berakar dalam kasih Tuhan. 
-            </p>
+    <main class="kilas-balik">
+        <div class="container">
             
-            <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 24px rgba(0, 69, 124, 0.12); background-color: #000;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
-                        src="https://www.youtube.com/embed/videoseries?list=PL_PaqcQQ6HpDTDY8TXp9cjTJtONH51Toc" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
+            <div class="section-header">
+                <span class="sub-title">KILAS BALIK</span>
+                <h2 class="main-title">Lorong Waktu Angkatan</h2>
+                <p class="desc-title">Mengenang kembali potongan cerita manis putra-putri kita selama 6 tahun menempuh pendidikan.</p>
             </div>
-            <p style="font-size: 11px; color: var(--sage); margin-top: 10px; font-style: italic;">*Durasi Tayangan: 30 Detik</p>
-        </div>
-    </section>
 
-    <section style="background-color: var(--earth-beige);">
-        <div class="animate-up">
-            <span class="motto-tag">SAVE THE DATE</span>
-            <h2 class="shine-text">Waktu dan Tempat</h2>
-            
-            <div style="background: var(--white); padding: 20px; border-radius: 16px; margin-top: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
-                <p style="font-weight: 600; color: var(--navy); font-size: 15.5px;"><i class="fa-regular fa-calendar-check" style="color: var(--sage); margin-right: 8px;"></i> Sabtu, 6 Juni 2026</p>
-                <p style="margin-top: 4px; font-size: 14px; padding-left: 24px; color: var(--slate); font-weight: 500;">Pkl. 08.00–12.00 WIB</p>
+            <div class="timeline-cards-container">
+
+                <div class="timeline-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="images/benih1.jpg" alt="Benih yang ditanam 1" class="slide active">
+                            <img src="images/benih2.jpg" alt="Benih yang ditanam 2" class="slide">
+                            <img src="images/benih3.jpg" alt="Benih yang ditanam 3" class="slide">
+                            <img src="images/benih4.jpg" alt="Benih yang ditanam 4" class="slide">
+                            <img src="images/benih5.jpg" alt="Benih yang ditanam 5" class="slide">
+                        </div>
+                        <button class="prev-btn" aria-label="Sebelumnya">&#10094;</button>
+                        <button class="next-btn" aria-label="Selanjutnya">&#10095;</button>
+                    </div>
+                    <div class="text-content">
+                        <h3>1. Benih yang ditanam</h3>
+                        <p>Memulai perjalanan dengan hati kecil yang penuh rasa ingin tahu. Tuhan menuntun setiap langkah sejak hari pertama kami datang ke sekolah ini.</p>
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="images/tumbuh1.jpg" alt="Bertumbuh bersama 1" class="slide active">
+                            <img src="images/tumbuh2.jpg" alt="Bertumbuh bersama 2" class="slide">
+                            <img src="images/tumbuh3.jpg" alt="Bertumbuh bersama 3" class="slide">
+                            <img src="images/tumbuh4.jpg" alt="Bertumbuh bersama 4" class="slide">
+                            <img src="images/tumbuh5.jpg" alt="Bertumbuh bersama 5" class="slide">
+                        </div>
+                        <button class="prev-btn" aria-label="Sebelumnya">&#10094;</button>
+                        <button class="next-btn" aria-label="Selanjutnya">&#10095;</button>
+                    </div>
+                    <div class="text-content">
+                        <h3>2. Bertumbuh bersama</h3>
+                        <p>Melalui persahabatan, permainan, dan pembelajaran, kami belajar mengasihi, menghargai teman, berani mencoba hal baru, melayani, dan memakai kemampuan yang Tuhan berikan untuk menjadi berkat. Kami memahami bahwa seorang responsible learner bukan hanya memiliki pengetahuan, tetapi juga mampu bekerja sama, peduli, dan membawa dampak baik bagi orang lain.</p>
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="slider-container">
+                        <div class="slider-wrapper">
+                            <img src="images/babbaru1.jpg" alt="Bab baru dimulai bersama Tuhan 1" class="slide active">
+                            <img src="images/babbaru2.jpg" alt="Bab baru dimulai bersama Tuhan 2" class="slide">
+                            <img src="images/babbaru3.jpg" alt="Bab baru dimulai bersama Tuhan 3" class="slide">
+                            <img src="images/babbaru4.jpg" alt="Bab baru dimulai bersama Tuhan 4" class="slide">
+                            <img src="images/babbaru5.jpg" alt="Bab baru dimulai bersama Tuhan 5" class="slide">
+                        </div>
+                        <button class="prev-btn" aria-label="Sebelumnya">&#10094;</button>
+                        <button class="next-btn" aria-label="Selanjutnya">&#10095;</button>
+                    </div>
+                    <div class="text-content">
+                        <h3>3. Bab baru dimulai bersama Tuhan</h3>
+                        <p>Perjalanan ini menjadi awal bab baru untuk terus belajar, bertumbuh, dan menjadi berkat dimanapun Tuhan menempatkan kami.</p>
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SD Athalia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Membaca seluruh komponen .timeline-card di halaman web
+            const cards = document.querySelectorAll('.timeline-card');
+
+            cards.forEach(card => {
+                const slides = card.querySelectorAll('.slide');
+                const dots = card.querySelectorAll('.dot');
+                const prevBtn = card.querySelector('.prev-btn');
+                const nextBtn = card.querySelector('.next-btn');
                 
-                <p style="font-weight: 600; color: var(--navy); font-size: 15.5px; margin-top: 16px;"><i class="fa-solid fa-map-location-dot" style="color: var(--sage); margin-right: 8px;"></i> Aula F</p>
-                <p style="margin-top: 4px; font-size: 14px; padding-left: 24px; color: var(--slate);">Gedung Sekolah SD Athalia</p>
-                <p style="font-size: 13px; padding-left: 24px; color: #64748b; font-style: italic; line-height: 1.4; margin-top: 2px;">Regensi Melati Mas Blok D-1, Pondok Jagung, Serpong Utara</p>
-            </div>
-        </div>
+                let currentIdx = 0;
+                const totalSlides = slides.length;
 
-        <div class="countdown-container animate-up delay-100">
-            <div class="countdown-card"><span class="countdown-value" id="cd-days">00</span><span class="countdown-label">Hari</span></div>
-            <div class="countdown-card"><span class="countdown-value" id="cd-hours">00</span><span class="countdown-label">Jam</span></div>
-            <div class="countdown-card"><span class="countdown-value" id="cd-minutes">00</span><span class="countdown-label">Menit</span></div>
-            <div class="countdown-card"><span class="countdown-value" id="cd-seconds">00</span><span class="countdown-label">Detik</span></div>
-        </div>
-    </section>
+                // Fungsi internal untuk mengubah slide foto dan titik indikator
+                function changeSlide(index) {
+                    if (index >= totalSlides) {
+                        currentIdx = 0;
+                    } else if (index < 0) {
+                        currentIdx = totalSlides - 1;
+                    } else {
+                        currentIdx = index;
+                    }
 
-    <section>
-        <div class="animate-up">
-            <span class="motto-tag">KILAS BALIK</span>
-            <h2 class="shine-text">Lorong Waktu Angkatan</h2>
-            <p style="margin-bottom: 25px; font-size: 14px; color: var(--slate);">Mengenang kembali potongan cerita manis putra-putri kita selama 6 tahun menempuh pendidikan.</p>
-        </div>
+                    // Loop ganti kecerahan/display gambar aktif
+                    slides.forEach((slide, idx) => {
+                        if (idx === currentIdx) {
+                            slide.classList.add('active');
+                        } else {
+                            slide.classList.remove('active');
+                        }
+                    });
 
-        <div class="slider-wrapper animate-up">
-            <button class="nav-btn prev-btn" onclick="gantiSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="nav-btn next-btn" onclick="gantiSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
-            
-            <div class="slides-container" id="kilas-balik-slider">
-                <div class="slide-item">
-                    <img src="https://picsum.photos/400/220?random=1" class="slide-img" alt="Awal Mula Kelas 1">
-                    <div class="slide-caption">
-                        <h4 style="font-family: 'Lora', serif; color: var(--navy); font-size: 16px; font-weight: 600;">Benih yang ditanam</h4>
-                        <p style="font-size: 13.5px; margin-top: 4px; color: var(--slate);">Memulai perjalanan dengan hati kecil yang penuh rasa ingin tahu. Tuhan menuntun setiap langkah sejak hari pertama kami datang ke sekolah ini.</p>
-                    </div>
-                </div>
-
-                <div class="slide-item">
-                    <img src="https://picsum.photos/400/220?random=2" class="slide-img" alt="Kebersamaan Field Trip">
-                    <div class="slide-caption">
-                        <h4 style="font-family: 'Lora', serif; color: var(--navy); font-size: 16px; font-weight: 600;">Bertumbuh bersama</h4>
-                        <p style="font-size: 13.5px; margin-top: 4px; color: var(--slate);">Melalui persahabatan, permainan, dan pembelajaran, kami belajar mengasihi, menghargai teman, berani mencoba hal baru, melayani, dan memakai kemampuan yang Tuhan berikan untuk menjadi berkat.</p>
-                    </div>
-                </div>
-
-                <div class="slide-item">
-                    <img src="https://picsum.photos/400/220?random=3" class="slide-img" alt="Puncak Kelas 6">
-                    <div class="slide-caption">
-                        <h4 style="font-family: 'Lora', serif; color: var(--navy); font-size: 16px; font-weight: 600;">Bab baru dimulai bersama Tuhan</h4>
-                        <p style="font-size: 13.5px; margin-top: 4px; color: var(--slate);">Perjalanan ini menjadi awal bab baru untuk terus belajar, bertumbuh, dan menjadi berkat dimanapun Tuhan menempatkan kami.</p>
-                    </div>
-                </div>
-
-                <div class="slide-item">
-                    <img src="https://picsum.photos/400/220?random=4" class="slide-img" alt="Kreativitas Kreatif">
-                    <div class="slide-caption">
-                        <h4 style="font-family: 'Lora', serif; color: var(--navy); font-size: 16px; font-weight: 600;">Mengembangkan Potensi</h4>
-                        <p style="font-size: 13.5px; margin-top: 4px; color: var(--slate);">Kami dibimbing untuk menjadi 'responsible learner' yang tidak hanya cerdas, tetapi juga mandiri, berintegritas tinggi, dan bertanggung jawab.</p>
-                    </div>
-                </div>
-
-                <div class="slide-item">
-                    <img src="https://picsum.photos/400/220?random=5" class="slide-img" alt="Kompak Selalu">
-                    <div class="slide-caption">
-                        <h4 style="font-family: 'Lora', serif; color: var(--navy); font-size: 16px; font-weight: 600;">Jejak Kebersamaan Manis</h4>
-                        <p style="font-size: 13.5px; margin-top: 4px; color: var(--slate);">Setiap tawa di koridor kelas, pelukan hangat dari guru, dan kerja sama tim akan selalu tersimpan abadi sebagai memori indah di SD Athalia.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="dot-container">
-            <div class="dot active" onclick="lompatKeSlide(0)"></div>
-            <div class="dot" onclick="lompatKeSlide(1)"></div>
-            <div class="dot" onclick="lompatKeSlide(2)"></div>
-            <div class="dot" onclick="lompatKeSlide(3)"></div>
-            <div class="dot" onclick="lompatKeSlide(4)"></div>
-        </div>
-    </section>
-
-    <section style="background-color: var(--earth-beige);">
-        <div class="animate-up">
-            <span class="motto-tag">SUSUNAN ACARA</span>
-            <h2 class="shine-text">Susunan Acara Prosesi Wisuda</h2>
-        </div>
-        
-        <div class="rundown-timeline">
-            <div class="rundown-item animate-up delay-100">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 08.00–08.15 WIB</div>
-                    <div class="rundown-title">Registrasi Tamu</div>
-                </div>
-            </div>
-            <div class="rundown-item highlight animate-up delay-200">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 08.20–08.50 WIB</div>
-                    <div class="rundown-title">Prosesi Wisudawan Memasuki Ruangan</div>
-                </div>
-            </div>
-            <div class="rundown-item animate-up delay-300">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 09.00–09.15 WIB</div>
-                    <div class="rundown-title">Ibadah Syukur Kelulusan</div>
-                </div>
-            </div>
-            <div class="rundown-item highlight animate-up">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 09.20–10.10 WIB</div>
-                    <div class="rundown-title">Prosesi Pengalungan Samir</div>
-                </div>
-            </div>
-            <div class="rundown-item animate-up delay-100">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 10.10–10.35 WIB</div>
-                    <div class="rundown-title">Persembahan Siswa</div>
-                </div>
-            </div>
-            <div class="rundown-item highlight animate-up delay-200">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 10.35–11.00 WIB</div>
-                    <div class="rundown-title">Sambutan dan Persembahan Orang Tua</div>
-                </div>
-            </div>
-            <div class="rundown-item animate-up delay-300">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 11.00–11.05 WIB</div>
-                    <div class="rundown-title">Pengumuman dari Sekolah</div>
-                </div>
-            </div>
-            <div class="rundown-item highlight animate-up">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 11.05–11.15 WIB</div>
-                    <div class="rundown-title">Persembahan Guru</div>
-                </div>
-            </div>
-            <div class="rundown-item animate-up delay-100">
-                <div class="rundown-dot"></div>
-                <div class="rundown-card-content">
-                    <div class="rundown-time">Pkl. 11.15–12.00 WIB</div>
-                    <div class="rundown-title">Doa Penutup dan Sesi Foto Kenangan</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="text-align: center;">
-        <div class="animate-up">
-            <span class="motto-tag">VIRTUAL BROADCAST</span>
-            <h2 class="shine-text">Saksikan Secara Virtual</h2>
-            <p style="margin: 10px 0 20px; font-size: 14px; color: var(--slate);">
-                 Bagi keluarga besar, kakek/nenek, maupun kerabat yang tidak dapat hadir langsung di lokasi, prosesi wisuda agung dapat diikuti secara langsung melalui tautan di bawah ini.
-            </p>
-            
-            <a href="https://youtube.com/live" target="_blank" class="btn-premium" style="background: linear-gradient(135deg, var(--youtube-red) 0%, #b30000 100%); box-shadow: 0 10px 20px rgba(217, 48, 37, 0.2);">
-                <i class="fa-solid fa-circle-dot pulse-icon" style="color: white; font-size: 14px;"></i> NONTON LIVE STREAMING
-            </a>
-        </div>
-    </section>
-
-    <section>
-        <div class="animate-up">
-            <span class="motto-tag">KETENTUAN EVENT</span>
-            <h2 class="shine-text">Protokol Pendamping</h2>
-            <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px;">
-                <div style="background: var(--earth-beige); padding: 16px; border-radius: 12px; border-left: 4px solid var(--navy); box-shadow: 0 4px 6px rgba(0,0,0,0.01);">
-                    <h4 style="font-size: 14px; color: var(--navy); font-weight: 600;"><i class="fa-solid fa-user-tie"></i> Pakaian Orang Tua</h4>
-                    <p style="font-size: 13px; margin-top: 4px; color: var(--slate); line-height: 1.5;">
-                        <strong>Ayah/Ibu:</strong> Batik formal bebas dan sopan.<br>
-                    </p>
-                </div>
-                <div style="background: var(--earth-beige); padding: 16px; border-radius: 12px; border-left: 4px solid var(--sage); box-shadow: 0 4px 6px rgba(0,0,0,0.01);">
-                    <h4 style="font-size: 14px; color: var(--sage); font-weight: 600;"><i class="fa-solid fa-chair"></i> Alokasi Kursi Utama</h4>
-                    <p style="font-size: 13px; margin-top: 4px; color: var(--slate); line-height: 1.5;">Mengingat keterbatasan kapasitas ruangan, kapasitas tempat duduk di dalam aula yang disediakan hanya untuk <strong>2 (dua) orang tua/wali murid</strong> (tidak diperkenankan membawa anak kecil, balita, atau pendamping lain).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="background-color: var(--earth-beige);">
-        <div class="animate-up">
-            <span class="motto-tag">PORTAL KENANGAN</span>
-            <h2 class="shine-text">Unduh Dokumentasi Resmi</h2>
-            <p style="margin: 10px 0 22px; font-size: 14px; color: var(--slate);">Seluruh file dokumentasi prosesi panggung dan photobooth keluarga dikumpulkan langsung di folder ini oleh tim fotografer.</p>
-            <a href="https://drive.google.com/drive/folders/1xevC0euAXCRiSSaWwoPwr0lGAs2lOUbT?usp=sharing" target="_blank" class="btn-premium" style="background: linear-gradient(135deg, var(--sage) 0%, #687a5f 100%);">
-                <i class="fa-brands fa-google-drive" style="font-size: 17px;"></i> BUKA GOOGLE DRIVE FOTO
-            </a>
-        </div>
-    </section>
-
-    <section style="text-align: center;">
-        <div class="animate-up">
-            <span class="motto-tag">KONTAK & LAYANAN</span>
-            <h2 class="shine-text">Butuh Bantuan Info?</h2>
-            <p style="margin-bottom: 20px; font-size: 14px; color: var(--slate);">Hubungi panitia atau helpdesk administrasi kelulusan sekolah melalui tautan WhatsApp interaktif di bawah ini.</p>
-            <a href="https://wa.me/6287771414812" target="_blank" class="btn-premium" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);">
-                <i class="fa-brands fa-whatsapp" style="font-size: 19px;"></i> WHATSAPP HELPDESK
-            </a>
-        </div>
-    </section>
-
-    <section style="text-align: center; padding-bottom: 40px; background: none;">
-        <div class="animate-up">
-            <img src="logoathalia.png" style="width: 70px; margin-bottom: 15px; opacity: 0.9;" alt="Logo Athalia Footer">
-            <h3 style="font-size: 18px; margin-bottom: 4px; color: var(--white);">SD Athalia</h3>
-            <p style="font-size: 12.5px; color: #94a3b8; line-height: 1.4; padding: 0 10px;">Regensi Melati Mas Blok D-1, Pondok Jagung, Serpong Utara<br>Tangerang Selatan, Banten</p>
-        </div>
-    </section>
-
-</div>
-
-<script>
-    // 1. LOGIKA INTERAKSI OBSERVER UNTUK ANIMASI SCROLL (ELEGAN)
-    document.addEventListener("DOMContentLoaded", function() {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15 
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                    observer.unobserve(entry.target); 
+                    // Loop ganti warna titik indikator aktif
+                    dots.forEach((dot, idx) => {
+                        if (idx === currentIdx) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
                 }
+
+                // Handler navigasi klik panah kanan
+                nextBtn.addEventListener('click', function() {
+                    changeSlide(currentIdx + 1);
+                });
+
+                // Handler navigasi klik panah kiri
+                prevBtn.addEventListener('click', function() {
+                    changeSlide(currentIdx - 1);
+                });
+
+                // Handler navigasi lompat slide via klik langsung pada dots (titik bawah)
+                dots.forEach((dot, idx) => {
+                    dot.addEventListener('click', function() {
+                        changeSlide(idx);
+                    });
+                });
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-up').forEach(element => {
-            observer.observe(element);
         });
-    });
-
-    // 2. LOGIKA AUDIO (TOMBOL AKTIF DI HALAMAN DEPAN & DALAM)
-    const myAudio = document.getElementById('bg-music');
-    const audioIcon = document.getElementById('audio-icon');
-    let isAudioPlaying = false;
-    
-    function toggleAudio() {
-        if (myAudio.paused) {
-            myAudio.play();
-            audioIcon.className = 'fa-solid fa-volume-high';
-            isAudioPlaying = true;
-        } else {
-            myAudio.pause();
-            audioIcon.className = 'fa-solid fa-volume-xmark';
-            isAudioPlaying = false;
-        }
-    }
-
-    // 3. LOGIKA INTERAKSI TOMBOL "KETUK UNTUK MASUK"
-    function bukaUndanganDigital() {
-        if (!isAudioPlaying) {
-            myAudio.play().catch(e => console.log("Auto-play audio terblokir browser"));
-            audioIcon.className = 'fa-solid fa-volume-high';
-            isAudioPlaying = true;
-        }
-
-        const cover = document.getElementById('welcome-gate');
-        const videoKolase = document.getElementById('video-kolase');
-        
-        cover.style.opacity = '0';
-        cover.style.transform = 'translateY(-30px)';
-        document.body.classList.remove('lock-scroll');
-        
-        setTimeout(() => { 
-            cover.style.display = 'none'; 
-            if(videoKolase) videoKolase.play().catch(e => console.log("Auto-play video terblokir browser"));
-        }, 1000);
-    }
-
-    // 4. PENYADURAN NAMA TAMU OTOMATIS (?to=Nama+Tamu)
-    const URLQuery = new URLSearchParams(window.location.search);
-    const dapatNama = URLQuery.get('to');
-    if(dapatNama) {
-        document.getElementById('tamu-nama-cover').innerText = dapatNama;
-    }
-
-    // FIXED & RESTRUCTURED: LOGIKA SLIDER KILAS BALIK
-    let slideSaatIni = 0;
-    const kontainerSlider = document.getElementById('kilas-balik-slider');
-    const kumpulanTitik = document.querySelectorAll('.dot');
-    const totalSlide = kumpulanTitik.length;
-
-    function perbaruiSlider() {
-        kontainerSlider.style.transform = `translateX(-${slideSaatIni * 100}%)`;
-        kumpulanTitik.forEach((titik, indeks) => {
-            titik.classList.toggle('active', indeks === slideSaatIni);
-        });
-    }
-
-    function gantiSlide(arah) {
-        slideSaatIni = (slideSaatIni + arah + totalSlide) % totalSlide;
-        perbaruiSlider();
-    }
-
-    function lompatKeSlide(indeks) {
-        slideSaatIni = indeks;
-        perbaruiSlider();
-    }
-
-    // 5. HITUNG MUNDUR STATIS (Target: 6 Juni 2026) - PERBAIKAN SCRIPT TERPOTONG
-    let targetWaktu = new Date("June 6, 2026 08:00:00").getTime();
-    const hitungMundur = setInterval(function() {
-        const waktuSekarang = new Date().getTime();
-        const selisih = targetWaktu - waktuSekarang;
-
-        if (selisih < 0) {
-            clearInterval(hitungMundur);
-            document.getElementById("cd-days").innerText = "00";
-            document.getElementById("cd-hours").innerText = "00";
-            document.getElementById("cd-minutes").innerText = "00";
-            document.getElementById("cd-seconds").innerText = "00";
-            return;
-        }
-
-        const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
-        const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
-        const detik = Math.floor((selisih % (1000 * 60)) / 1000);
-
-        document.getElementById("cd-days").innerText = hari < 10 ? "0" + hari : hari;
-        document.getElementById("cd-hours").innerText = jam < 10 ? "0" + jam : jam;
-        document.getElementById("cd-minutes").innerText = menit < 10 ? "0" + menit : menit;
-        document.getElementById("cd-seconds").innerText = detik < 10 ? "0" + detik : detik;
-    }, 1000);
-</script>
-
+    </script>
 </body>
 </html>
