@@ -794,5 +794,16 @@
     }, 1000);
 </script>
 
+<script>
+    // Mengambil elemen audio berdasarkan ID
+    var audio = document.getElementById("bg-music");
+    
+    // Mengatur volume (nilai berkisar antara 0.0 sampai 1.0)
+    // 0.7 berarti volume diatur ke 70%
+    if (audio) {
+        audio.volume = 0.7;
+    }
+</script>
+    
 </body>
 </html>
